@@ -31,16 +31,11 @@ function updateData($mobile,$data){
 
     if ($usr['mobile'] == $mobile){
       $rs = $users[$i] = array_replace($usr,$replacements);
-      // print_r($rs);
     }else{
       $usr;
-      // echo "else";
     }
-    // array_push($array['users'],$rs);
     $i = $i + 1; 
   }
-  // print_r($users);
-  // echo json_encode($users);
   $user_table = array("users" => $users);
   file_put_contents($file, json_encode($user_table));
 }
