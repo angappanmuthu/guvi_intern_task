@@ -16,17 +16,17 @@ services:
       - ./php/src:/var/www/html/
     ports:
       - "8000:80"
-    container_name: moe-php-app
+    container_name: guvi-php-app
   mysql:
     image: mysql:5.7
     networks:
       - backend
     environment:
       - MYSQL_ROOT_PASSWORD=rootpassword
-      - MYSQL_USER=moeuser
-      - MYSQL_PASSWORD=moepass
-      - MYSQL_DATABASE=moe_db
-    container_name: moe-mysql-app
+      - MYSQL_USER=guviuser
+      - MYSQL_PASSWORD=guvipass
+      - MYSQL_DATABASE=guvi_db
+    container_name: guvi-mysql-app
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:4.7
     depends_on:
@@ -40,7 +40,7 @@ services:
       - PMA_PORT= 3306
     volumes:
       - /sessions
-    container_name: moe-phpmyadmin-app
+    container_name: guvi-phpmyadmin-app
 networks:
   frontend:
   backend:
