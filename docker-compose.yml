@@ -1,24 +1,46 @@
 version: "3"
 services:
-  php-apache-environment:
-    container_name: php-apache
+  php:
     build:
       context: ./php
-      dockerfile: Dockerfile
-    depends_on:
-      - db
+    image: amakundu/moe-php-mysql-demo:1.0.0
+    networks:
+      - frontend
+      - backend
+    environment:
+      - MYSQL_HOST=moe-mysql-app
+      - MYSQL_USER=moeuser
+      - MYSQL_PASSWORD=moepass
+      - MYSQL_DB=moe_db
     volumes:
       - ./php/src:/var/www/html/
     ports:
-      - 8000:80
-  db:
-    container_name: db
-    image: mysql
-    restart: always
+      - "8000:80"
+    container_name: moe-php-app
+  mysql:
+    image: mysql:5.7
+    networks:
+      - backend
     environment:
-      MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
-      MYSQL_DATABASE: MYSQL_DATABASE
-      MYSQL_USER: MYSQL_USER
-      MYSQL_PASSWORD: MYSQL_PASSWORD
+      - MYSQL_ROOT_PASSWORD=rootpassword
+      - MYSQL_USER=moeuser
+      - MYSQL_PASSWORD=moepass
+      - MYSQL_DATABASE=moe_db
+    container_name: moe-mysql-app
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7
+    depends_on:
+      - mysql
+    networks:
+      - backend
     ports:
-      - "9906:3306"
+      - "8001:80"
+    environment:
+      - PMA_HOST=moe-mysql-app
+      - PMA_PORT= 3306
+    volumes:
+      - /sessions
+    container_name: moe-phpmyadmin-app
+networks:
+  frontend:
+  backend:
