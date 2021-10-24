@@ -1,7 +1,6 @@
 <?php
-// header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: application/json; charset=utf-8');
 
-
-// echo json_encode($array);
+echo json_encode(array("name" => "User"));
 
 ?>

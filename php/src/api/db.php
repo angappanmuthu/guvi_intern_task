@@ -1,8 +1,8 @@
 <?php
-$host='localhost';
-$username='guviuser';
-$pass='';
-$db='guvi';
+$host=!empty($_ENV['MYSQL_HOST'])?$_ENV['MYSQL_HOST']:"localhost";
+$username=!empty($_ENV['MYSQL_USER'])?$_ENV['MYSQL_USER']:"root";
+$pass=!empty($_ENV['MYSQL_PASSWORD'])?$_ENV['MYSQL_PASSWORD']:"";
+$db=!empty($_ENV['MYSQL_DB'])?$_ENV['MYSQL_DB']:"test";
 
 $conn = mysqli_connect($host,$username,$pass,$db);
 
