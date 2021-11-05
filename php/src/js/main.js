@@ -50,7 +50,7 @@ $(document).ready(function() {
                $(location).attr('href','profile.html');
                sessionStorage.setItem("mobile", mobile);
             }else{
-               $(location).attr('href','index.php');
+               $(location).attr('href','index.html');
             }
          }
       }):alert("Some Field is empty!");

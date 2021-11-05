@@ -9,7 +9,7 @@ $(document).ready(function(){
                 console.log(data);
                 $("input[name='name']").val(data[0].name);
                 $("input[name='age']").val(data[0].age);
-                $("input[name='dob']").val(data[0].dob);
+                document.getElementsByName("name").value = data[0].dob;
                 $("input[name='email']").val(data[0].email);
                 $("input[name='city']").val(data[0].city);
             }

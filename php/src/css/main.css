@@ -1,2 +1,40 @@
 .side-image img {
   width: 100%; }
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto Slab", serif; }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #5318f3; }
+  .header__brand__logo img {
+    height: 50px;
+    width: 100px; }
+  .header__menus {
+    display: flex;
+    height: 40px; }
+    .header__menus .active {
+      background-color: yellowgreen;
+      color: black;
+      border-radius: 6px;
+      border: none; }
+  .header__link {
+    margin-right: 10px;
+    list-style-type: none;
+    margin: 10px; }
+    .header__link a {
+      margin-top: 15px;
+      font-size: 15px;
+      padding: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #bbc5f3; }
+
+input[type="submit"] {
+  background-color: #5318f3;
+  color: white;
+  border: none;
+  border-radius: 5px; }

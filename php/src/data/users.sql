@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: guvi-mysql-app: 3306
--- Generation Time: Oct 24, 2021 at 07:57 AM
+-- Generation Time: Oct 24, 2021 at 11:37 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.2.2
 
@@ -31,24 +31,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `users` (
   `mobile` int(11) NOT NULL,
   `password` varchar(100) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
   `age` int(11) DEFAULT NULL,
   `dob` date DEFAULT NULL,
-  `city` varchar(50) DEFAULT NULL
+  `city` varchar(50) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`mobile`, `password`, `age`, `dob`, `city`) VALUES
-(111, '111', NULL, NULL, NULL),
-(222, '222', NULL, NULL, NULL),
-(333, '333', NULL, NULL, NULL),
-(444, '444', NULL, NULL, NULL),
-(555, '555', NULL, NULL, NULL),
-(666, '666', NULL, NULL, NULL),
-(777, '777', NULL, NULL, NULL),
-(999, '999', NULL, NULL, NULL);
+INSERT INTO `users` (`mobile`, `password`, `name`, `age`, `dob`, `city`, `email`) VALUES
+(888, '888', 'asdf', 21, '2000-03-23', 'kkdi', 'asdfadf@gmail.com');
 
 --
 -- Indexes for dumped tables
@@ -68,7 +63,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `mobile` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000;
+  MODIFY `mobile` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=889;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
